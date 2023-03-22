@@ -1,0 +1,18 @@
+.navbar-css{
+    background-color: rgb(217, 217, 217) !important;
+}
+
+.search-button-css{
+    border-color: rgb(60, 110, 113) !important;
+    color: rgb(60, 110, 113) !important;
+    margin-left: 10px;
+}
+
+.search-button-css:hover{
+    background-color: rgb(60, 110, 113) !important;
+    color: white !important;
+}
+
+.dropdown-button-css{
+    background-color: rgb(60, 110, 113) !important;
+}
