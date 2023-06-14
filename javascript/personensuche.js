@@ -14,7 +14,7 @@ searchInput.addEventListener("input", e => {
   })
 })
 
-fetch("https://jsonplaceholder.typicode.com/users")
+fetch("https://mocki.io/v1/0b9757e4-d6bf-4219-8eb9-56d99e2e94bf")
   .then(res => res.json())
   .then(data => {
     users = data.map(user => {

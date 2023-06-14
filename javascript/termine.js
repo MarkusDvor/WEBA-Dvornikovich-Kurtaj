@@ -29,7 +29,7 @@ addList=(x)=>{
                  </div>    
                 </li> `;
         input.value=" ";
-        localStorage.setItem("Termine"+listNum, inputText, inputDate);
+        localStorage.setItem("Termine"+listNum, inputText, inputDate.value);
         listNum++;
    }
    return false;
