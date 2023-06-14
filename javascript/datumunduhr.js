@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
         "Jul",
         "Aug",
         "Sep",
-        "Oct",
+        "Okt",
         "Nov",
         "Dez"
       ];

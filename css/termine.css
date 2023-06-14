@@ -1,0 +1,26 @@
+.container-todo{
+    margin-top: 6em;
+}
+
+div.row{
+    padding: 0;
+}
+
+div.col-1{
+    display: flex;
+    align-items: center;
+}
+
+div.col-6{
+    display: flex;
+    align-items: center;
+}
+
+button.btn btn-dark{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.col-2{
+    justify-content: center;
+}

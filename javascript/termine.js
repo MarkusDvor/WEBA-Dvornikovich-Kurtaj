@@ -1,9 +1,8 @@
 let input = document.getElementById("inputText");
         let list= document.getElementById("list");
+        let date = document.getElementById("inputDate");
         let minimalValue = 3;
-        let listNum = 0;
-
-   
+        let listNum = 0;  
 
 addList=(x)=>{
     // get
@@ -11,45 +10,41 @@ addList=(x)=>{
     if(x != ''){
         inputText = x;
     } else {
-    inputText = filterList(input.value);
+    inputText = filterList(input.value,inputDate.value);
     }
     // set 
    if (inputText) {
     list.innerHTML += ` <li class=" my-3 py-3 shadow list-group-item " id="list${listNum}">
                 <div class="row">
-                <div class="col-1">
-                <input class="" type="checkbox" id="check${listNum}" onclick="done(${listNum})">
-                </div>
-                <div class="col-6">
+                <div class="col-2">
+                    <span class=" h4" id="date${listNum}"> ${inputDate.value} </span>
+                </div>  
+                <div class="col-4">
                     <span class=" h4" id="text${listNum}"> ${inputText} </span>
                 </div>
-                <div class="col-4">
+                <div class="col-2">
                      <button class=" btn btn-dark" onclick="deleteList(${listNum})">Löschen</button>
                      <button class=" btn btn-dark" onclick="editList(${listNum})">Bearbeiten</button>
-                </div>                  
+                </div>          
                  </div>    
                 </li> `;
         input.value=" ";
-        localStorage.setItem("Todo"+listNum, inputText);
+        localStorage.setItem("Termine"+listNum, inputText, inputDate);
         listNum++;
    }
    return false;
 }
 
-done=(listId)=>{ 
-    let checkbox = document.getElementById(`check${listId}`);
-    let current = document.getElementById(`text${listId}`);
-    let classExit=current.classList.contains("text-decoration-line-through");
-    if (classExit == true) {
-        current.classList.remove("text-decoration-line-through");
-    }else{
-        current.classList.add("text-decoration-line-through");
-    }
-    
-}
-
-filterList=(x)=>{
-       if (x) {
+filterList=(x,y)=>{
+        if(!y && x.length < minimalValue){
+            alert("Bitte ein Datum auswählen und mehr als 3 Zeichen eingeben!")
+            return false;
+        }
+        else if(!y){
+            alert("Bitte ein Datum auswählen!")
+            return false;
+        }
+        else if (x) {
             if (x.length >= minimalValue) {
                 return x;
             }
@@ -62,10 +57,32 @@ filterList=(x)=>{
        }
 }
 
+filterListDate=(x,y)=>{
+    if(!y && x.length < minimalValue){
+        alert("Bitte ein Datum auswählen und mehr als 3 Zeichen eingeben!")
+        return false;
+    }
+    else if(!y){
+        alert("Bitte ein Datum auswählen!")
+        return false;
+    }
+    else if (x) {
+        if (x.length >= minimalValue) {
+            return y;
+        }
+        else{
+            alert("Bitte mehr als 3 Zeichen eingeben!")
+        }
+   }
+   else{
+        return false;
+   }
+}
+
 editList=(listId)=>{
     let currentText = document.getElementById(`text${listId}`);
     let newText = prompt("Wollen Sie die Liste bearbeiten?",currentText.innerHTML);
-    if (filterList(newText)) {
+    if (filterList(newText,inputDate)) {
         currentText.innerHTML = newText; 
     }
 }
@@ -77,7 +94,7 @@ deleteList=(listId)=>{
          let p = document.getElementById("list")
         let c = document.getElementById(`list${listId}`);
         p.removeChild(c);
-        localStorage.removeItem("Todo"+listId);
+        localStorage.removeItem("Termine"+listId);
         console.log(listId);
     }
     else{
@@ -91,7 +108,7 @@ function loadList(){
             console.log(localStorage.getItem(key));
             addList(localStorage.getItem(key));
         }
-        }); 
+        });    
 }
 
 loadList();

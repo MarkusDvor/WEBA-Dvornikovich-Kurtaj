@@ -2,15 +2,15 @@
 <html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>Todo Liste - Dashboard</title>
+        <title>Startseite - Dashboard</title>
         <meta name="viewport" content="width=device-width, inital-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link href="../css/index.css" rel="stylesheet">
-        <link href="../css/todo.css" rel="stylesheet">
+        <link href="../css/gallerie.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
       </head>
     <body>
-        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" aria-label="Hauptleiste">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Hauptleiste">
             <div class="container-fluid">
               <a class="navbar-brand" href="../html/index.html"><img class="technikum-logo" src="../assets/technikum_logo.png" alt="Technikum Logo"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,35 +43,27 @@
                 </ul>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Suche" aria-label="Search">
-                  <button class="btn btn-outline-success fa fa-search" type="submit"></button>
+                  <button class="btn btn-outline-success fa fa-search" type="submit" alt="Suche Starten"></button>
                 </form>
               </div>
             </div>
         </nav>
-
-        <div class="container container-todo" style="height:auto;">
-            <div>
-              <form onsubmit="addList(''); return false">
-                <h1 class=" h1">Todo Liste</h1> 
-                <div class="row">
-                    <div class=" col-8">
-                        <input class=" py-3 form-control shadow" placeholder="Geben Sie einen Todo-Namen ein!" type="text" id="inputText" aria-label="Geben Sie einen Todo-Namen ein!"> 
-                    </div>
-                    <div class="col-2">
-                        <!-- <i onclick="addList()" class=" btn btn-dark rounded-pill fas fa-4x fa-plus-circle "></i> -->
-                        <input type="submit" class=" mt-2 btn btn-dark" value="Hinzufügen">
-                    </div>
-                </div>
-              </form>
-            </div>
-            <hr>
-            <div class="row rounded bg-white">
-                <div class=" col-12"> 
-                    <ul class=" list-group" id="list"></ul>
-                </div> 
-            </div> 
+        <div class="container text-center container-main">
+          <h1>31.05.2023</h1>
+          <div class="container">
+            <img src="../assets/FCO_Test_1.jpeg" class="gallerie-image" alt="Fußballspiel">
+            <img src="../assets/FCO_Test_2.jpg" class="gallerie-image" alt="Fußballspiel">
+            <img src="../assets/FCO_Test_3.jpg" class="gallerie-image" alt="Fußballspiel">
+          </div>
+          <h1>13.05.2023</h1>
+          <div class="container">
+            <img src="../assets/23 05 13 Fußball/Fußball 1.jpeg" class="gallerie-image" alt="Fußballspiel">
+            <img src="../assets/23 05 13 Fußball/Fußball 2.jpeg" class="gallerie-image" alt="Fußballspiel">
+            <img src="../assets/23 05 13 Fußball/Fußball 3.jpeg" class="gallerie-image" alt="Fußballspiel">
+            <img src="../assets/23 05 13 Fußball/Fußball 4.jpeg" class="gallerie-image" alt="Fußballspiel">
+          </div>
         </div>
 
-        <script language="javascript" type="text/javascript" src="../javascript/todo.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
-    </html>
+</html>
