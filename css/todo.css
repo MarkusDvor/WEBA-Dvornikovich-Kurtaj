@@ -1,5 +1,6 @@
 .container-todo{
-    margin-top: 6em;
+    margin-top: 2em;
+    height:auto;
 }
 
 div.row{
@@ -19,4 +20,30 @@ div.col-6{
 button.btn btn-dark{
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+}
+
+.col-2{
+    display:flex;
+    align-content: flex-end;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px){
+    .col-sm{
+        justify-content: left;
+    }
+}
+
+.submit-btn{
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+form{
+    margin-bottom: 1rem;
+}
+
+p{
+    margin-bottom: 0.1rem;
 }

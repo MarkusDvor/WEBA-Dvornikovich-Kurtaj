@@ -14,9 +14,10 @@ searchInput.addEventListener("input", e => {
   })
 })
 
-fetch("https://mocki.io/v1/0b9757e4-d6bf-4219-8eb9-56d99e2e94bf")
+fetch("https://mocki.io/v1/d97f54c2-4a6d-460f-942a-aed45e65ff6c")
   .then(res => res.json())
   .then(data => {
+    console.log(data)
     users = data.map(user => {
       const card = userCardTemplate.content.cloneNode(true).children[0]
       const header = card.querySelector("[data-header]")

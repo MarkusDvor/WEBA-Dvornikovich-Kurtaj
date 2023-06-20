@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Startseite - Dashboard</title>
-        <meta name="viewport" content="width=device-width, inital-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="../css/index.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/personensuche.css">
-        <script src="../javascript/personensuche.js" defer></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-      </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Hauptleiste">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="../html/index.html"><img class="technikum-logo" src="../assets/technikum_logo.png" alt="Technikum Logo"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <!--
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li>
-                  -->
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Suche" aria-label="Search">
-                  <button class="btn btn-outline-success fa fa-search" type="submit" alt="Suche Starten"></button>
-                </form>
-              </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard: Personensuche</title>
+    <link rel="shortcut icon" href="https://moodle.technikum-wien.at/theme/image.php/fhtw/theme/1686944988/favicon">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="../css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/personensuche.css">
+    <script src="../javascript/personensuche.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  </head>
+  <body onload="colorLoad()">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary" aria-label="Hauptleiste">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../html/index.html"><img class="technikum-logo" src="../assets/technikum_logo.png" alt="Technikum Logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <div class="d-flex">
+              <h2 class="nav-text">Hintergrundfarbe ändern</h2>
             </div>
-        </nav>
-
-          <div class="container text-center">
-            <div class="search-wrapper">
-              <label for="search"><h1>Personensuche</h1></label>
-              <input class="form-control me-2" type="search" id="search" placeholder="Zum Filtern, bitte Namen eingeben!" data-search>
+            <div class="d-flex">
+              <label class="switch" oninput="color()">
+                <input type="checkbox" id="colorButton" aria-label="Schalter zum Ändern der Hintergrundfarbe">
+                <span class="slider round"></span>
+              </label>
             </div>
-            <div class="user-cards" data-user-cards-container></div>
-            <template data-user-template>
-              <div class="card">
-                <div class="header" data-header></div>
-                <div class="body" data-body></div>
-              </div>
-            </template>
+            <div class="d-flex d-font">
+              <button class="form-control fontM" onclick="fontMinus()">A</button>
+            </div>
+            <div class="d-flex d-font">
+              <button class="form-control fontP" onclick="fontPlus()">A</button>
+            </div>
           </div>
+        </div>
+      </nav>
+    </header>
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    </body>
+    <main class="container text-center">
+      <div class="search-wrapper">
+        <form>
+          <label class="h1" for="search">Personensuche</label>
+          <input class="form-control me-2" type="search" id="search" placeholder="Zum Filtern, bitte Namen eingeben!" data-search>  
+        </form>
+        </div>
+      <div class="user-cards" data-user-cards-container></div>
+      <template data-user-template>
+        <div class="card">
+          <div class="header" data-header><p></p></div>
+          <div class="body" data-body><p></p></div>
+        </div>
+      </template>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../javascript/hintergrund.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="../javascript/fontsize.js"></script>
+  </body>
 </html>

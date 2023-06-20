@@ -87,7 +87,7 @@ deleteList=(listId)=>{
 
 function loadList(){
     Object.keys(localStorage).forEach((key) => {
-        if(key.includes("Termine")){
+        if(key.includes("Todo")){
             console.log(localStorage.getItem(key));
             addList(localStorage.getItem(key));
         }
