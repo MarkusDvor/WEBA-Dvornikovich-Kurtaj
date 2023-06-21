@@ -11,7 +11,7 @@ addList=(x)=>{
     if(x != ''){
         inputText = x;
     } else {
-    inputText = filterList(input.value);
+        inputText = filterList(input.value);
     }
     // set 
    if (inputText) {

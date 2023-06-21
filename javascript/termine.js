@@ -10,7 +10,7 @@ addList=(x)=>{
     if(x != ''){
         inputText = x;
     } else {
-    inputText = filterList(input.value,inputDate.value);
+        inputText = filterList(input.value,inputDate.value);
     }
     // set 
    if (inputText) {
@@ -29,7 +29,7 @@ addList=(x)=>{
                  </div>    
                 </li> `;
         input.value=" ";
-        localStorage.setItem("Termine"+listNum, inputText, inputDate.value);
+        localStorage.setItem("Termine"+listNum, inputText);
         listNum++;
    }
    return false;
